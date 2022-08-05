@@ -41,7 +41,7 @@ function DetailPokemon({ allData }) {
               <>
               <li key={index} >
                 Ability : {item.type[type]}
-              </li>
+              </li>o
               </>
             ))}
         </ul>
