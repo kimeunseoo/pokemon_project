@@ -12,6 +12,7 @@ const Fight = ({allData}) => {
   const computerPokemon = allData[computerRand];
   
   return (
+    <div className="fight-container-box">
     <div className="fight-container">
       <div className="computer">
         <div>
@@ -37,6 +38,7 @@ const Fight = ({allData}) => {
           <button className="pokemon-attack">Attack</button>
         </div>
       </div>
+    </div>
     </div>
   )
 } 

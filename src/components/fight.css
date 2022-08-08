@@ -4,6 +4,12 @@
   align-items: center;
   height: 100vh;
 } */
+.fight-container-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 .fight-container {
   height: 400px;
