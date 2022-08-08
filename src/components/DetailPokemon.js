@@ -1,5 +1,6 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 function DetailPokemon({ allData }) {
   const pokemonId = useParams();
@@ -46,6 +47,8 @@ function DetailPokemon({ allData }) {
             ))}
         </ul>
       ))}
+      <Link to="/pokemon"><Button>back</Button></Link>
+      <Link to={`/pokemon/${pokemonId.id}/fight`}><Button>Choose</Button></Link>
 
     </>
 

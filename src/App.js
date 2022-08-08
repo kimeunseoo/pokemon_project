@@ -4,6 +4,7 @@ import './App.css';
 import AllPokemon from "./components/AllPokemon";
 import DetailPokemon from "./components/DetailPokemon"
 import Home from "./components/home"
+import Fight from "./components/Fight"
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
   return (
 <div>
    <Routes>
+    <Route path="/pokemon/:id/fight" element={<Fight allData={pokeApi} />} />    
     <Route path="/pokemon/:id" element={<DetailPokemon allData={pokeApi} />} />
     <Route path="/pokemon" element={<AllPokemon allData={pokeApi} />} />   
     <Route path="/" element={<Home />} />   
