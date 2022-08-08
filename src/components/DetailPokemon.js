@@ -37,11 +37,11 @@ function DetailPokemon({ allData }) {
       .filter((item) => item.id == pokemonId.id)
       .map((item)=>(
         <ul>
-           {Object.keys(item.type).map((type, index) => (
+           {Object.keys(item.type).map((type) => (
               <>
-              <li key={index} >
-                Ability : {item.type[type]}
-              </li>o
+              <li>
+               type : {item.type[type]}
+              </li>
               </>
             ))}
         </ul>

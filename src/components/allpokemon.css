@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+.container_card{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.custom-class{
+    width: 130px;
+    height: 100px;
+    margin: 10px;
+}
+.card .card-body .card-text {
+    color: #3c4bca;
+    font-size: .9rem;
+    font-weight: 400;
+}
+.bg-container{
+    background-image: url('/public/img/nio-milano-caH-ZLrisZA-unsplash.jpg');
+    background-size: cover;
+}
+
+.title-allpokemon{
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 50px;
+ }
+
+.logo-box{
+    justify-content: center;
+    align-items: center;
+    content: url('/public/img/pokemon_logo.png');
+    width: 500px;
+    height: 300px; 
+    margin: 0 auto;
+    
+}
+ /* .title-box-allpokemon{
+     display: flex;
+     align-items: center;
+ } */
+ 
