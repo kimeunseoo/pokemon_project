@@ -5,28 +5,64 @@ import './fight.css';
 const Fight = ({allData}) => {
   const {id} = useParams();
 
-  const [playerState, setPlayerState] = useState(0)
-  const [computerState, setComputerState] = useState(0)
+  const [playerState, setPlayerState] = useState({
+    "HP": 0,
+    "Attack": 0,
+    "Defense": 0,
+    "Sp. Attack":0,
+    "Sp. Defense":0,
+    "Speed": 0
+  })
+
+  const [computerState, setComputerState] = useState({
+      "HP": 0,
+      "Attack": 0,
+      "Defense": 0,
+      "Sp. Attack":0,
+      "Sp. Defense":0,
+      "Speed": 0
+    })
+
+  console.log(playerState);
 
   if(!allData[id-1]) return <p>Loading</p>;
-
+  
   const {base, name} = allData[id-1];
-  if(base.HP != playerState) setPlayerState(base.HP);
 
+  if(
+    base.HP !== playerState.HP &&
+    base.Attack !== playerState.Attack &&
+    base.Defense !== playerState.Defense &&
+    base["Sp. Attack"] !== playerState["Sp. Attack"] &&
+    base["Sp. Defense"] !== playerState["Sp. Defense"] &&
+    base.Speed !== playerState.Speed 
+    ) setPlayerState(base);
+  
   const computerRand = Math.floor(Math.random()*allData.length);
   const computerPokemon = allData[computerRand];
-  if(computerPokemon.base.HP === 0) setComputerState(computerPokemon.base.HP)
-    
+
+  if(
+    computerPokemon.base.HP !== computerState.HP &&
+    computerPokemon.base.Attack !== computerState.Attack &&
+    computerPokemon.base.Defense !== computerState.Defense &&
+    computerPokemon.base["Sp. Attack"] !== computerState["Sp. Attack"] &&
+    computerPokemon.base["Sp. Defense"] !== computerState["Sp. Defense"] &&
+    computerPokemon.base.Speed !== computerState.Speed
+    ) setComputerState(computerPokemon.base)
+
+  
+  
+
   return (
     <div className="fight-container-box">
     <div className="fight-container">
       <div className="computer">
         <div>
           <h1>{computerPokemon.name.english}</h1>
-          <h2>HP: {computerPokemon.base.HP}</h2>
-          <h2>ATK: {computerPokemon.base.Attack}</h2>
-          <h2>DEF: {computerPokemon.base.Defense}</h2>
-          <h2>SPD: {computerPokemon.base.Speed}</h2>
+          <h3>HP: {computerState.HP}</h3>
+          <h3>ATK: {computerState.Attack}</h3>
+          <h3>DEF: {computerState.Defense}</h3>
+          <h3>SPD: {computerState.Speed}</h3>
         </div>
         <div className="button-container">
           <button className="pokemon-attack">Attack</button>
@@ -35,10 +71,10 @@ const Fight = ({allData}) => {
       <div className="player">
         <div>
           <h1>{name.english}</h1>
-          <h2>HP: {base.HP}</h2>
-          <h2>ATK: {base.Attack}</h2>
-          <h2>DEF: {base.Defense}</h2>
-          <h2>SPD: {base.Speed}</h2>
+          <h3>HP: {playerState.HP}</h3>
+          <h3>ATK: {playerState.Attack}</h3>
+          <h3>DEF: {playerState.Defense}</h3>
+          <h3>SPD: {playerState.Speed}</h3>
         </div>
         <div className="button-container">
           <button className="pokemon-attack">Attack</button>
