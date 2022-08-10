@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AllPokemon from "./components/AllPokemon";
 import DetailPokemon from "./components/DetailPokemon"
-import Home from "./components/home"
+import Home from "./components/Home"
 import Fight from "./components/Fight"
 
 
