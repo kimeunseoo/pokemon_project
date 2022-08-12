@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+.allpage{
+
+    background-image: url('/public/img/pokemon-ball-colors-simple-background-1440x900.png');
+    background-size: cover;
+
+}
+.header{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+.header-title{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.title{
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 60px;
+    margin-right: 20px;
+}
+
+.main_home{
+    display: flex;
+    justify-content: center;
+    height: 350px;
+}
+.button-start{
+    width: 120px;
+    height: 28px;
+    margin-top: 110px;
+    
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+.info-box{
+    display: flex;
+    height: 100px;
+    justify-content: center;
+}
+.info_g03{
+    display: flex;
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bolder;
+    padding:0 20px 0 30px;
+    margin-top: 60px;
+}
+.footer_copyright-box{
+    display: flex;
+    justify-content: center;
+}
+
+.footer_copyright{
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bolder;
+    color: black;
+    margin-bottom: 15px;
+    
+}
