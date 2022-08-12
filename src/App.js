@@ -10,6 +10,8 @@ import Fight from "./components/Fight"
 function App() {
   const[pokeApi, setPokeApi]= useState([]);
   const url ='https://pokefight-g03-api.herokuapp.com/pokemon';
+  
+
   const [computerPokemon, setComputerPokemon] = useState({
     "HP": 0,
     "Attack": 0,
@@ -18,15 +20,21 @@ function App() {
     "Sp. Defense":0,
     "Speed": 0
   })
+  const [computerPokeName, setComputerPokeName] = useState({
+    "english":"" })
 
   const getComputerPokemon = (res) => {
-    const computerRand = Math.floor(Math.random()*res.length);
+    const computerRand = Math.floor(Math.random()* res.length);
     if(res.length>0){
       const addComputerPokemon = res[computerRand];
+      setComputerPokeName(addComputerPokemon.name)
       setComputerPokemon(addComputerPokemon.base)
       console.log("hier" + computerPokemon)
     }
   }
+
+  
+
 
   const getFetch = () => {
     return fetch(url)
@@ -50,17 +58,13 @@ function App() {
 
   }, []);
   
-
-  
   // console.log(pokeApi)
   console.log(computerPokemon)
-
-
 
   return (
 <div>
    <Routes>
-    <Route path="/pokemon/:id/fight" element={<Fight allData={pokeApi} pokemon={computerPokemon} setPokemon={setComputerPokemon}/>}/>    
+    <Route path="/pokemon/:id/fight" element={<Fight allData={pokeApi} pokemon={computerPokemon} randomPokeName={computerPokeName} setPokemon={setComputerPokemon} />}/>    
     <Route path="/pokemon/:id" element={<DetailPokemon allData={pokeApi} />} />
     <Route path="/pokemon" element={<AllPokemon allData={pokeApi} />} />   
     <Route path="/" element={<Home />} />   
