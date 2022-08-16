@@ -74,24 +74,24 @@ const Fight = ({ allData, pokemon, setPokemon, randomPokeName }) => {
   const playerFight = () => {
     setFight(true)
     if (base.Speed > pokemon.Speed) {
-      setComputerHP((prev) => prev - 15);
+      setComputerHP((prev) => prev - Math.floor(Math.random()* 15));
       if (computerHP <= 0) {
         setComputerHP(0);
       }
     } else {
-      setPlayerHP((prev) => prev - 15);
+      setPlayerHP((prev) => prev - Math.floor(Math.random()* 15));
       if (playerHP <= 0) {
         setPlayerHP(0);
       }
     }
     setTimeout(() => {
       if (base.Speed > pokemon.Speed) {
-        setPlayerHP((prev) => prev - 13);
+        setPlayerHP((prev) => prev - Math.floor(Math.random()* 15));
         if (playerHP <= 0) {
           setPlayerHP(0);
         }
       } else {
-        setComputerHP((prev) => prev - 13);
+        setComputerHP((prev) => prev - Math.floor(Math.random()* 15));
         if (computerHP <= 0) {
           setComputerHP(0);
         }
@@ -99,7 +99,7 @@ const Fight = ({ allData, pokemon, setPokemon, randomPokeName }) => {
     }, 1000);
 
     if(fight === true && playerHP <= 0){
-      alert('your Lose')
+      alert('your Loose')
     }
     if(fight === true && computerHP <= 0){
       alert('Your Win')
