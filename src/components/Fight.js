@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Prev } from "react-bootstrap/esm/PageItem";
 import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
@@ -30,6 +30,7 @@ const Fight = ({ allData, pokemon, setPokemon, randomPokeName }) => {
   const [playerHP, setPlayerHP] = useState(0);
   const [computerHP, setComputerHP] = useState(0);
   const [fight, setFight]=useState(false);
+  const [fightResult, setFightResult]= useState('');
 
   if (!allData[id - 1]) return <p>Loading</p>;
 
@@ -100,11 +101,25 @@ const Fight = ({ allData, pokemon, setPokemon, randomPokeName }) => {
 
     if(fight === true && playerHP <= 0){
       alert('your Loose')
+      setFightResult(randomPokeName.english) 
     }
     if(fight === true && computerHP <= 0){
       alert('Your Win')
+      setFightResult(name.english)
     }
   };
+  const sendFightResult=()=>{
+  // sende logindaten an api endpunkt
+  const requestOptions = {
+    method : "POST",
+    headers : {"content-type":"application/json"},
+    body:JSON.stringify({
+      winner: fightResult
+    }),
+  };
+  fetch("https://pokefight-backend-u46b.vercel.app/pokefightresult", requestOptions)
+  .then((res)=>res.headers)
+}
 
 
 

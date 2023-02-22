@@ -9,7 +9,7 @@ import Fight from "./components/Fight"
 
 function App() {
   const[pokeApi, setPokeApi]= useState([]);
-  const url ='https://pokefight-g03-api.herokuapp.com/pokemon';
+  const url ='https://pokefight-backend-u46b.vercel.app/pokemon/';
   
 
   const [computerPokemon, setComputerPokemon] = useState({
