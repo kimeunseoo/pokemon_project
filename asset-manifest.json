@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/pokemon_project/static/css/main.ea13bcb9.css",
+    "main.js": "/pokemon_project/static/js/main.a2b41fe1.js",
+    "static/media/nio-milano-caH-ZLrisZA-unsplash.jpg": "/pokemon_project/static/media/nio-milano-caH-ZLrisZA-unsplash.ff99a584c584283d9988.jpg",
+    "static/media/pokemon_logo.png": "/pokemon_project/static/media/pokemon_logo.5b8a5f1101a4404b9428.png",
+    "static/media/pokemon-ball-colors-simple-background-1440x900.png": "/pokemon_project/static/media/pokemon-ball-colors-simple-background-1440x900.cb2d3978dcf677c4dd7c.png",
+    "index.html": "/pokemon_project/index.html",
+    "main.ea13bcb9.css.map": "/pokemon_project/static/css/main.ea13bcb9.css.map",
+    "main.a2b41fe1.js.map": "/pokemon_project/static/js/main.a2b41fe1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea13bcb9.css",
+    "static/js/main.a2b41fe1.js"
+  ]
+}
